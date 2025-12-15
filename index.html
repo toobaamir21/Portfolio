@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooba Amir - Backend Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 2em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            color: #555;
+        }
+
+        .skill-category li:before {
+            content: "▹ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .project-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .project-links a {
+            padding: 8px 15px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .project-links a:hover {
+            background: #764ba2;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: #e8eaf6;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .company-date {
+            color: #666;
+            font-style: italic;
+            margin: 5px 0;
+        }
+
+        .responsibilities {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .responsibilities li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .responsibilities li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Your Name</h1>
+            <p>Backend Developer | API Architect | Database Enthusiast</p>
+            <div class="social-links">
+                <a href="https://github.com/toobaamir21" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/tooba-amir/" target="_blank">LinkedIn</a>
+                <a href="toobaamir@gmail.com">Email</a>
+                <a href="your-resume.pdf" target="_blank">Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Backend developer with 14+ months of professional experience specializing in building scalable APIs and robust server-side applications. Passionate about clean code, system design, and solving complex technical challenges. Experienced in developing RESTful services, optimizing database performance, and implementing secure authentication systems.</p>
+            <p style="margin-top: 15px;">Currently focusing on microservices architecture, cloud deployment, and DevOps practices.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <ul>
+                        <li>Python</li>
+                        <li>JavaScript/TypeScript</li>
+                        <li>Java</li>
+                        <li>Go</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks</h4>
+                    <ul>
+                        <li>Node.js / Express</li>
+                        <li>Django / Flask</li>
+                        <li>Spring Boot</li>
+                        <li>FastAPI</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <ul>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>Redis</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & DevOps</h4>
+                    <ul>
+                        <li>Docker</li>
+                        <li>Git / GitHub</li>
+                        <li>AWS / GCP</li>
+                        <li>CI/CD (Jenkins, GitHub Actions)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>E-Commerce REST API</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/project" target="_blank">GitHub</a>
+                        <a href="https://api-docs-url.com" target="_blank">API Docs</a>
+                    </div>
+                </div>
+                <p>A comprehensive e-commerce backend with user authentication, product management, shopping cart, and payment integration. Implements JWT-based authentication, role-based access control, and optimized database queries.</p>
+                <p style="margin-top: 10px;"><strong>Key Features:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 5px;">
+                    <li>RESTful API with OpenAPI documentation</li>
+                    <li>Stripe payment integration</li>
+                    <li>Redis caching for improved performance</li>
+                    <li>Comprehensive unit and integration tests (90% coverage)</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Jest</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Real-Time Chat Application</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/project" target="_blank">GitHub</a>
+                        <a href="https://live-demo-url.com" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+                <p>Scalable real-time messaging system supporting private and group chats with message history, online status, and typing indicators. Built with WebSocket for bi-directional communication.</p>
+                <p style="margin-top: 10px;"><strong>Key Features:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 5px;">
+                    <li>WebSocket implementation for real-time messaging</li>
+                    <li>Message persistence and search functionality</li>
+                    <li>User presence detection</li>
+                    <li>Deployed on AWS with load balancing</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">WebSockets</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">AWS</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Task Management API</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/project" target="_blank">GitHub</a>
+                        <a href="https://api-docs-url.com" target="_blank">Swagger Docs</a>
+                    </div>
+                </div>
+                <p>Project management system with task tracking, team collaboration, and analytics. Features include task assignment, deadline management, and activity logs.</p>
+                <p style="margin-top: 10px;"><strong>Key Features:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 5px;">
+                    <li>GraphQL API with complex query optimization</li>
+                    <li>Rate limiting and API key authentication</li>
+                    <li>Automated email notifications</li>
+                    <li>CI/CD pipeline with automated testing</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">GraphQL</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">GitHub Actions</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="job-title">Junior Backend Developer</div>
+                    <div class="company-date">Company Name | Month Year - Present (11 months)</div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Developed and maintained RESTful APIs serving 10,000+ daily active users</li>
+                    <li>Optimized database queries reducing average response time by 40%</li>
+                    <li>Implemented JWT-based authentication and role-based access control</li>
+                    <li>Collaborated with frontend team to design and document API endpoints</li>
+                    <li>Wrote comprehensive unit and integration tests achieving 85% code coverage</li>
+                    <li>Participated in code reviews and contributed to technical documentation</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="job-title">Backend Development Intern</div>
+                    <div class="company-date">Company Name | Month Year - Month Year (3 months)</div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Built RESTful API endpoints for user management system</li>
+                    <li>Implemented data validation and error handling middleware</li>
+                    <li>Wrote automated tests for critical business logic</li>
+                    <li>Assisted in database schema design and migrations</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="job-title">Backend Development Intern</div>
+                    <div class="company-date">Company Name | Month Year - Month Year (3 months)</div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Developed internal tools for data processing and reporting</li>
+                    <li>Integrated third-party APIs for payment and notification services</li>
+                    <li>Participated in agile development practices and daily standups</li>
+                    <li>Documented API specifications using Swagger/OpenAPI</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>I'm currently open to new opportunities and interesting projects. Feel free to reach out if you'd like to collaborate or just chat about backend development!</p>
+            <p style="margin-top: 15px;">
+                <strong>Email:</strong> your.email@example.com<br>
+                <strong>Location:</strong> Your City, Country
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
